@@ -20,7 +20,7 @@ const BlogSectionCard = (post) => {
     <div className="group p-6 sm:p-8 rounded-3xl bg-yellow-100 border border-gray-100  shadow-2xl shadow-gray-600/10">
       <div className="relative overflow-hidden rounded-xl">
         <Image
-          src={post.post.coverImage.url}
+          src={post.post?.coverImage?.url}
           alt="art cover"
           loading="lazy"
           width={1000}
