@@ -24,7 +24,7 @@ const PostCard = ({ post }) => (
       <div className="mt-2 flex">
         <div className="avatar ">
           <div className="w-10 rounded-full">
-            <Image src="/images/attorneys/dummy1.jpg"      width={50}
+            <Image src="/images/attorneys/dummy1.jpg"  alt="author"     width={50}
       height={50}/>
           </div>
         </div>

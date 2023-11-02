@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -16,14 +17,14 @@ const BlogSectionCard = (post) => {
   }
 
   return (
-    <div className="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100  shadow-2xl shadow-gray-600/10">
+    <div className="group p-6 sm:p-8 rounded-3xl bg-yellow-100 border border-gray-100  shadow-2xl shadow-gray-600/10">
       <div className="relative overflow-hidden rounded-xl">
-        <img
+        <Image
           src={post.post.coverImage.url}
           alt="art cover"
           loading="lazy"
-          width="1000"
-          height="667"
+          width={1000}
+          height={667}
           className="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105"
         />
       </div>

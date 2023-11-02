@@ -5,7 +5,7 @@ const Criminal = () => {
   return (
     <div className="bg-neutral-90 relative -top-20 w-full font-poppins ">
       <div className="w-full relative">
-        <img
+        <Image
           src="/images/mainBG5.jpg"
           alt="bg"
           className="object-cover w-full bg-opacity-60 max-h-[110vh]"

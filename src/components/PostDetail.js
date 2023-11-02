@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import Image from "next/image";
 const PostDetail = ({ post }) => {
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
@@ -27,7 +28,7 @@ const PostDetail = ({ post }) => {
         return <h4 key={index} className="text-md font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
       case 'image':
         return (
-          <img
+          <Image
             key={index}
             alt={obj.title}
             height={obj.height}
@@ -45,6 +46,8 @@ const PostDetail = ({ post }) => {
     <div className="text-neutral-800 bg-yellow-200  lg:p-8 pb-12 mb-8 rounded-md">
       <div className="relative overflow-hidden shadow mb-6 ">
         <Image
+          width={1080}
+          height={480}
           src={post.coverImage.url}
           alt={post.title}
           className="object-top max-h-[420px] object-cover w-full rounded-t-lg"
@@ -54,14 +57,14 @@ const PostDetail = ({ post }) => {
         <div className="flex  items-center mb-8 w-full">
           <div className="flex items-center  mb-4 lg:mb-0 w-full lg:w-auto mr-8 ">
             <Image
-              alt={post.author.name}
-              height="30px"
-              width="30px"
+              alt={"author"}
+              height={30}
+              width={30}
               className="align-middle rounded-full "
-              src={post.author.photo.url}
+              src={post?.author?.photo?.url}
             />
             <p className="inline align middle dark:bg-transparent ml-2 text-lg">
-              {post.author.name}
+              {post?.author?.name}
             </p>
           </div>
           <div className="font-md  dark:bg-transparent">

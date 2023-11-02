@@ -27,9 +27,31 @@ export async function getStaticProps() {
 const Home = ({ result }) => {
   const [dataLoaded, setDataLoaded] = useState(false);
   const [postData, setPostData] = useState(false);
+  const attorneys = [
+    {
+      name: "Sachin Hirwa",
+      photo: "/images/attorneys/dummy1.jpg",
+      profile: "Head Lawyer & Founder Hirwa Associates",
+    },
+    {
+      name: "Shraddha Kapoor",
+      photo: "/images/attorneys/profilecard1.png",
+      profile: "Junior Lawyer",
+    },
+    {
+      name: "Ankit Bourasi",
+      photo: "/images/attorneys/dummy1.jpg",
+      profile: "Intern",
+    },
+    {
+      name: "Aryan Danal",
+      photo: "/images/attorneys/dummy1.jpg",
+      profile: "Intern",
+    },
+  ];
 
-  const Profiles = Array.from({ length: 4 }, (_, index) => {
-    return <AuthorProfile key={index} />;
+  const Profiles = attorneys.map((e, index) => {
+    return <AuthorProfile key={index} attorneys={e} />;
   });
 
   useEffect(() => {
@@ -183,11 +205,11 @@ const Home = ({ result }) => {
             >
               <h1 className="">Expert</h1>
               <Image
-              alt="hammerIcon"
+                alt="hammerIcon"
                 src="/images/icons/hammerlaw.png"
                 className="md:w-16 w-12"
-                width={16}
-                height={16}
+                width={64}
+                height={52}
               />
 
               <h1>Legal</h1>
@@ -289,7 +311,7 @@ const Home = ({ result }) => {
             </div>
             <div>
               <p className="md:text-4xl text-2xl text-right  ">
-               {`
+                {`
                 At Hirwa Law Firm, we are dedicated to providing top-notch legal
                 representation and guidance tailored to your individual needs.
                 With over 25 years of combined experience, our team of highly
@@ -346,13 +368,12 @@ const Home = ({ result }) => {
               {/*logo image  */}
               <div className="w-full flex justify-center">
                 <div className=" rounded-full  bg-slate-800 p-5">
-                  <Image 
+                  <Image
                     src="/images/icons/family1.png"
                     className="md:w-14  md:h-14 w-10 h-10  "
                     width={140}
                     height={140}
                     alt="familylaw"
-                    
                   />
                 </div>
               </div>
@@ -382,13 +403,12 @@ const Home = ({ result }) => {
               {/*logo image  */}
               <div className="w-full flex justify-center">
                 <div className=" rounded-full bg-slate-800 p-5">
-                  <Image 
+                  <Image
                     src="/images/icons/personal.png"
                     className="md:w-14  md:h-14 w-10 h-10  text-yellow-200  "
                     width={140}
                     height={140}
                     alt="personalLaw"
-                  
                   />
                 </div>
               </div>
@@ -396,7 +416,7 @@ const Home = ({ result }) => {
                 Personal Injury
               </h3>
               <p className="text-[12px] md:text-[16px]">
-               {` Securing compensation for injuries resulting from someone else\'s
+                {` Securing compensation for injuries resulting from someone else\'s
                 negligence.`}
               </p>
             </m.div>
@@ -459,7 +479,6 @@ const Home = ({ result }) => {
                     width={140}
                     height={140}
                     alt="busineessLaw"
-                  
                   />
                 </div>
               </div>
@@ -495,7 +514,6 @@ const Home = ({ result }) => {
                     width={140}
                     height={140}
                     alt="landLaw"
-
                   />
                 </div>
               </div>
@@ -531,7 +549,6 @@ const Home = ({ result }) => {
                     width={140}
                     height={140}
                     alt="realstateLaw"
-
                   />
                 </div>
               </div>
@@ -549,10 +566,19 @@ const Home = ({ result }) => {
         {/* why choose us  */}
         <div className="w-full md:flex items-center  bg-yellow-50 min-h-screen">
           <div className="hidden md:block  w-full max-w-4xl relative">
-            <Image src="/images/97.jpg " alt="imageYellowBackground" className="w-[650px] h-[580px]" width={650} height={580} />
+            <Image
+              src="/images/97.jpg "
+              alt="imageYellowBackground"
+              className="w-[650px] h-[580px]"
+              width={650}
+              height={580}
+            />
             <Image
               src="/images/gallary/4.png"
-              className="w-[620px] h-[480px] absolute left-24 top-[50px] rounded-lg" alt="whychooseus" width={620}height={480}
+              className="w-[620px] h-[480px] absolute left-24 top-[50px] rounded-lg"
+              alt="whychooseus"
+              width={620}
+              height={480}
             />
           </div>
           <div className="w-full text-black md:pl-10 px-4 md:pt-0  pt-16 mb-6">
@@ -591,8 +617,6 @@ const Home = ({ result }) => {
 
         {/* Meet with your lawyers */}
         <div className="min-h-[100vh] md:relative mb-10">
-         
-
           <div className="py-20 text-white">
             <div className="xl:container mx-auto px-6 md:px-12">
               <div className="mb-16 md:w-2/3 lg:w-1/2">
@@ -600,7 +624,10 @@ const Home = ({ result }) => {
                   Meet our Attorneys
                 </h2>
                 <p className=" dark:text-gray-300">
-                Meet our experienced team of dedicated attorneys, each bringing a unique blend of expertise, knowledge, and commitment to delivering exceptional legal services. Discover more about our accomplished legal professionals below
+                  Meet our experienced team of dedicated attorneys, each
+                  bringing a unique blend of expertise, knowledge, and
+                  commitment to delivering exceptional legal services. Discover
+                  more about our accomplished legal professionals below
                 </p>
               </div>
               <div className="grid gap-6 px-4 sm:px-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">

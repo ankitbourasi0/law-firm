@@ -17,7 +17,7 @@ const Counter = ({ from, to, duration }) => {
   useEffect(() => {
     const controls = animate(count, to, { duration: duration });
     return controls.stop;
-  }, [isInView]);
+  },[]);
 
 
   return (
@@ -27,6 +27,7 @@ const Counter = ({ from, to, duration }) => {
       whileInView={{
         opacity: 1,
       }}
+      viewport={{once:true}}
       className="
  font-bold  text-4xl md:text-5xl
  "
