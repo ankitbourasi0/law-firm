@@ -16,30 +16,30 @@ const BlogSectionCard = (post) => {
   }
 
   return (
-    <div class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100  shadow-2xl shadow-gray-600/10">
-      <div class="relative overflow-hidden rounded-xl">
+    <div className="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100  shadow-2xl shadow-gray-600/10">
+      <div className="relative overflow-hidden rounded-xl">
         <img
           src={post.post.coverImage.url}
           alt="art cover"
           loading="lazy"
           width="1000"
           height="667"
-          class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105"
+          className="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105"
         />
       </div>
-      <div class="mt-6 relative">
-        <Link class="inline-block" href={`/blog/${post.post.slug}`}>
-          <h3 class="text-2xl font-semibold text-gray-800 dark:text-white line-clamp-3">
+      <div className="mt-6 relative">
+        <Link className="inline-block" href={`/blog/${post.post.slug}`}>
+          <h3 className="text-2xl font-semibold text-gray-800 dark:text-white line-clamp-3">
             {post.post.title}
           </h3>
         </Link>
         
-        <p class="mt-2 mb-4 text-gray-600 dark:text-gray-300">
+        <p className="mt-2 mb-4 text-gray-600 dark:text-gray-300">
           Voluptates harum aliquam totam, doloribus eum impedit atque!
           Temporibus...
         </p>
-        <Link class="inline-block" href={`/blog/${post.post.slug}`}>
-          <button class="btn btn-neutral">Read more</button>
+        <Link className="inline-block" href={`/blog/${post.post.slug}`}>
+          <button className="btn btn-neutral">Read more</button>
         </Link>
       </div>
     </div>

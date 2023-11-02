@@ -29,7 +29,7 @@ const Home = ({ result }) => {
   const [postData, setPostData] = useState(false);
 
   const Profiles = Array.from({ length: 4 }, (_, index) => {
-    return <AuthorProfile />;
+    return <AuthorProfile key={index} />;
   });
 
   useEffect(() => {
@@ -182,9 +182,12 @@ const Home = ({ result }) => {
               className="flex text-yellow-50 md:text-7xl text-4xl font-bold space-x-4"
             >
               <h1 className="">Expert</h1>
-              <img
-                src="./images/icons/hammerlaw.png"
+              <Image
+              alt="hammerIcon"
+                src="/images/icons/hammerlaw.png"
                 className="md:w-16 w-12"
+                width={16}
+                height={16}
               />
 
               <h1>Legal</h1>
@@ -228,9 +231,12 @@ const Home = ({ result }) => {
             </m.button>
           </div>
           <div className=" flex justify-center items-center ">
-            <img
-              src="./images/books.png"
+            <Image
+              src="/images/books.png"
               className="object-cover w-full max-w-[680px]"
+              width={680}
+              height={680}
+              alt="bookIcon"
             />
           </div>
         </div>
@@ -283,13 +289,13 @@ const Home = ({ result }) => {
             </div>
             <div>
               <p className="md:text-4xl text-2xl text-right  ">
-                {" "}
+               {`
                 At Hirwa Law Firm, we are dedicated to providing top-notch legal
                 representation and guidance tailored to your individual needs.
                 With over 25 years of combined experience, our team of highly
                 skilled attorneys specializes in a diverse divers range of legal
-                areas, ensuring that no matter your issue, we've got your
-                covered.{" "}
+                areas, ensuring that no matter your issue, we\'ve got your
+                covered.`}
               </p>
               <div className="w-full flex py-6 items-center justify-between ">
                 <div className="border-l-2 border-gray-400 md:pl-4 pl-2 space-y-3">
@@ -340,9 +346,13 @@ const Home = ({ result }) => {
               {/*logo image  */}
               <div className="w-full flex justify-center">
                 <div className=" rounded-full  bg-slate-800 p-5">
-                  <img
-                    src="./images/icons/family2.png"
+                  <Image 
+                    src="/images/icons/family1.png"
                     className="md:w-14  md:h-14 w-10 h-10  "
+                    width={140}
+                    height={140}
+                    alt="familylaw"
+                    
                   />
                 </div>
               </div>
@@ -372,9 +382,13 @@ const Home = ({ result }) => {
               {/*logo image  */}
               <div className="w-full flex justify-center">
                 <div className=" rounded-full bg-slate-800 p-5">
-                  <img
-                    src="./images/icons/personal.png"
+                  <Image 
+                    src="/images/icons/personal.png"
                     className="md:w-14  md:h-14 w-10 h-10  text-yellow-200  "
+                    width={140}
+                    height={140}
+                    alt="personalLaw"
+                  
                   />
                 </div>
               </div>
@@ -382,8 +396,8 @@ const Home = ({ result }) => {
                 Personal Injury
               </h3>
               <p className="text-[12px] md:text-[16px]">
-                Securing compensation for injuries resulting from someone else's
-                negligence.
+               {` Securing compensation for injuries resulting from someone else\'s
+                negligence.`}
               </p>
             </m.div>
 
@@ -405,8 +419,11 @@ const Home = ({ result }) => {
               <div className="w-full flex justify-center">
                 <div className=" rounded-full bg-slate-800 p-5">
                   <img
-                    src="./images/icons/criminal.png"
+                    src="/images/icons/criminal.png"
                     className="md:w-14  md:h-14 w-10 h-10  text-yellow-200  "
+                    width={140}
+                    height={140}
+                    alt="criminalLaw"
                   />
                 </div>
               </div>
@@ -436,9 +453,13 @@ const Home = ({ result }) => {
               {/*logo image  */}
               <div className="w-full flex justify-center">
                 <div className=" rounded-full bg-slate-800 p-5">
-                  <img
-                    src="./images/icons/business.png"
+                  <Image
+                    src="/images/icons/business.png"
                     className="md:w-14  md:h-14 w-10 h-10  text-yellow-200  "
+                    width={140}
+                    height={140}
+                    alt="busineessLaw"
+                  
                   />
                 </div>
               </div>
@@ -468,9 +489,13 @@ const Home = ({ result }) => {
               {/*logo image  */}
               <div className="w-full flex justify-center">
                 <div className=" rounded-full bg-slate-800 p-5">
-                  <img
-                    src="./images/icons/planning.png"
+                  <Image
+                    src="/images/icons/planning.png"
                     className="md:w-14  md:h-14 w-10 h-10  text-yellow-200  "
+                    width={140}
+                    height={140}
+                    alt="landLaw"
+
                   />
                 </div>
               </div>
@@ -500,9 +525,13 @@ const Home = ({ result }) => {
               {/*logo image  */}
               <div className="w-full flex justify-center">
                 <div className=" rounded-full bg-slate-800 p-5">
-                  <img
-                    src="./images/icons/realestate.png"
+                  <Image
+                    src="/images/icons/realestate.png"
                     className="md:w-14  md:h-14 w-10 h-10  text-yellow-200  "
+                    width={140}
+                    height={140}
+                    alt="realstateLaw"
+
                   />
                 </div>
               </div>
@@ -520,10 +549,10 @@ const Home = ({ result }) => {
         {/* why choose us  */}
         <div className="w-full md:flex items-center  bg-yellow-50 min-h-screen">
           <div className="hidden md:block  w-full max-w-4xl relative">
-            <img src="./images/97.jpg " className="w-[650px] h-[580px]" />
-            <img
-              src="./images/gallary/4.png"
-              className="w-[620px] h-[480px] absolute left-24 top-[50px] rounded-lg"
+            <Image src="/images/97.jpg " alt="imageYellowBackground" className="w-[650px] h-[580px]" width={650} height={580} />
+            <Image
+              src="/images/gallary/4.png"
+              className="w-[620px] h-[480px] absolute left-24 top-[50px] rounded-lg" alt="whychooseus" width={620}height={480}
             />
           </div>
           <div className="w-full text-black md:pl-10 px-4 md:pt-0  pt-16 mb-6">
@@ -556,78 +585,25 @@ const Home = ({ result }) => {
             </button>
           </div>
           <div className="md:hidden block  w-full  ">
-            <img src="./images/criminalImage.jpg" className=" w-full  " />
+            {/* <Image src="/images/criminalImage.jpg"  className=" w-full  "  width={""}/> */}
           </div>
         </div>
 
         {/* Meet with your lawyers */}
         <div className="min-h-[100vh] md:relative mb-10">
-          {/* <div className="md:block hidden ">
-            <img src="./images/grid.jpg" className="w-full md:object-cover  " />
-          </div> */}
+         
 
-          {/* <div className=" w-full md:max-w-7xl min-h-screen  md:absolute top-10 left-32">
-            <div className="text-center py-8">
-              <h1 className="text-4xl md:text-6xl text-yellow-100 font-semibold">
-                Meet With <br />
-                Your Lawyers
-              </h1>
-            </div>
-            <div className="w-full mt-2">
-              <div className="grid md:grid-cols-3 grid-cols-1 gap-5  w-full md:max-w-[68rem] mx-auto ">
-                <div className="md:max-w-[320px]  md:rounded-none mx-auto bg-yellow-50 min-h-[360px] md:min-h-[420px] relative">
-                  <img
-                    src="./images/attorneys/dummy1.jpg"
-                    className="object-cover md:h-80 h-72"
-                  />
-                  <div className="absolute text-black text-center px-12 w-full md:py-4 py-3  bg-white">
-                    <h2 className="font-bold text-lg">Aryan Danal</h2>
-                    <p className="md:text-base text-sm">Junior Attorney</p>{" "}
-                  </div>
-                </div>
-                <div className="max-w-[320px]  md:rounded-none mx-auto bg-yellow-50 min-h-[360px] md:min-h-[420px] relative">
-                  <img
-                    src="./images/attorneys/dummy1.jpg"
-                    className="object-cover md:h-80 h-72"
-                  />
-                  <div className="absolute text-black text-center px-12 w-full md:py-4 py-3  bg-white">
-                    <h2 className="font-bold text-lg">Ankit Bourasi</h2>
-                    <p className="md:text-base text-sm">Senior Attorney</p>{" "}
-                  </div>
-                </div>
-                <div className="max-w-[320px]  md:rounded-none mx-auto bg-yellow-50 min-h-[360px] md:min-h-[420px] relative">
-                  <img
-                    src="./images/attorneys/dummy1.jpg"
-                    className="object-cover md:h-80 h-72"
-                  />
-                  <div className="absolute text-black text-center px-12 w-full md:py-4 py-3  bg-white">
-                    <h2 className="font-bold text-lg">Aryan Danal</h2>
-                    <p className="md:text-base text-sm">Junior Attorney</p>{" "}
-                  </div>
-                </div>
-              </div>
-           
-              <div className="w-full flex justify-center mt-10">
-                <button className="bg-[#ebd234] md:rounded-none rounded-lg text-neutral-800 font-bold md:text-xl px-14 py-4">
-                  View All Attorney
-                </button>
-              </div>
-            </div>
-          </div> */}
-
-          <div class="py-20 text-white">
-            <div class="xl:container mx-auto px-6 md:px-12">
-              <div class="mb-16 md:w-2/3 lg:w-1/2">
-                <h2 class="mb-4 text-2xl font-bold   md:text-4xl">
-                  Tailus blocks leadership
+          <div className="py-20 text-white">
+            <div className="xl:container mx-auto px-6 md:px-12">
+              <div className="mb-16 md:w-2/3 lg:w-1/2">
+                <h2 className="mb-4 text-2xl font-bold   md:text-4xl">
+                  Meet our Attorneys
                 </h2>
-                <p class=" dark:text-gray-300">
-                  Tailus prides itself not only on award-winning technology, but
-                  also on the talent of its people of some of the brightest
-                  minds and most experienced executives in business.
+                <p className=" dark:text-gray-300">
+                Meet our experienced team of dedicated attorneys, each bringing a unique blend of expertise, knowledge, and commitment to delivering exceptional legal services. Discover more about our accomplished legal professionals below
                 </p>
               </div>
-              <div class="grid gap-6 px-4 sm:px-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              <div className="grid gap-6 px-4 sm:px-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {Profiles}
               </div>
             </div>
@@ -641,13 +617,13 @@ const Home = ({ result }) => {
             <h1 className="md:text-5xl  md:mb-8 mb-3  font-semibold text-center text-3xl  md:capitalize uppercase ">
               Blogs
             </h1>
-            <p class=" text-center lg:mx-auto lg:w-6/12 text-gray-700 text-lg dark:text-gray-300">
+            <p className=" text-center lg:mx-auto lg:w-6/12 text-gray-700 text-lg dark:text-gray-300">
               Insights, updates, and expert perspectives: Explore our blog for
               the latest in law. Stay informed, get practical advice, and gain
               valuable insights into the legal world.
             </p>
           </div>
-          <div className="  md:px-16 grid grid-cols-3 gap-x-10">
+          <div className="  md:px-16 px-8 grid md:grid-cols-3 md:gap-y-0 gap-y-4 gap-x-10 ">
             {postData.posts &&
               postData.posts.slice(-3).map((post) => (
                 <PostCard post={post} key={post.id} />
@@ -664,7 +640,7 @@ const Home = ({ result }) => {
 
         <div className="w-full min-h-[430px] md:relative px-6">
           {/* <img
-            src="./images/grid.jpg"
+            src="/images/grid.jpg"
             className="w-full object-cover overflow-hidden md:block hidden max-h-[420px] "
           /> */}
           <div className="w-full md:absolute md:mt-0 mt-20 top-32 ">

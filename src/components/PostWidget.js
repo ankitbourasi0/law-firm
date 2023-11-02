@@ -22,7 +22,7 @@ const PostWidget = ({ categories, slug }) => {
       {relatedPosts.map((post) => (
         <div key={post.title} className="flex    rounded-lg p-1  justify-center transition duration-300  items-center w-full mb-4">
           <div className="w-16 flex-none">
-            <img
+            <Image
               alt={post.title}
               height="60px"
               width="60px"

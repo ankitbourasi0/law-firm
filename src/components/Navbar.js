@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={` container bg-yellow-50    w-full font-poppins text-neutral-700 font-semibold flex  items-center  `}
+        className={` container bg-yellow-50 md:px-0 px-3   w-full font-poppins text-neutral-700 font-semibold flex  items-center  `}
       >
         <div className="max-w-7xl mx-auto w-full flex items-center justify-between py-6">
           <Link href={"/"} className="flex items-center w-28 ">
@@ -37,7 +37,7 @@ const Navbar = () => {
             <Link href={"/contact"}>Contact</Link>
           </ul>
     
-        <button className=" font-semibold btn bg-[#ebd234] btn-md hover:bg-yellow-400 px-8 ">
+        <button className=" font-semibold btn bg-[#ebd234] md:btn-md hover:bg-yellow-400 px-8 ">
             Consultation
           </button>
        
