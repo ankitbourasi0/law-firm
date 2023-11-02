@@ -29,9 +29,9 @@ const BlogSectionCard = (post) => {
         />
       </div>
       <div className="mt-6 relative">
-        <Link className="inline-block" href={`/blog/${post.post.slug}`}>
+        <Link className="inline-block" href={`/blog/${post.post?.slug}`}>
           <h3 className="text-2xl font-semibold text-gray-800 dark:text-white line-clamp-3">
-            {post.post.title}
+            {post.post?.title}
           </h3>
         </Link>
         
@@ -39,7 +39,7 @@ const BlogSectionCard = (post) => {
           Voluptates harum aliquam totam, doloribus eum impedit atque!
           Temporibus...
         </p>
-        <Link className="inline-block" href={`/blog/${post.post.slug}`}>
+        <Link className="inline-block" href={`/blog/${post.post?.slug}`}>
           <button className="btn btn-neutral">Read more</button>
         </Link>
       </div>
