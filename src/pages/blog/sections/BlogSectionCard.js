@@ -33,7 +33,7 @@ const BlogSectionCard = (post) => {
 
   <div className="bg-white p-4 sm:p-6">
     <time  className="block text-xs font-semibold text-gray-500">
-    {moment(post.post.createdAt).format("MMM DD, YYYY")}
+    {moment(post?.post?.createdAt).format("MMM DD, YYYY")}
     </time>
 
     <Link href={`/blog/${post.post?.slug}`}>

@@ -8,6 +8,7 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [phone, setPhone] = useState("")
+  const [ShowSuccessMessage, setShowSuccessMessage] = useState(false)
   const handleSubmit = async (e) => {
     e.preventDefault();
     // console.log(email)
@@ -23,13 +24,25 @@ const Contact = () => {
     const obj = { email: email1, message: message1 };
     console.log(email, message);
 
-    await fetch("/api/email/route", {
+    const res = await fetch("/api/email/route", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(obj),
+    }).then((res) => {
+      setShowSuccessMessage(true);
+      setEmail("")
+      setMessage("")
+      setPhone("")
+      setTimeout(() => {
+        setShowSuccessMessage(false);
+      }, 3000);
     });
+   
+
+
+
   };
   return (
     <div className="w-full font-poppins min-h-[100vh] bg-gradient-to-br from-gray-700 via-gray-900 to-black text-gray-400">
@@ -101,6 +114,11 @@ const Contact = () => {
             <button className="btn  btn-md  btn-accent w-full">
               Send Message <PiPaperPlaneRightFill size={18} />
             </button>
+            {ShowSuccessMessage && (
+          <span className="text-xl  float-right font-semibold mt-3 text-green-600">
+            Contacted successful
+          </span>
+        )}
           </form>
           </div>
         </div>
