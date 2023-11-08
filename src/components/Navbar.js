@@ -4,12 +4,13 @@ import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
 
 import Image from "next/image";
-// import  {useCustomer} from '@/utils/useCustomScreenSize';
+import MobileNav from "./MobileNav";
+import useMediaQuery from "@/utils/useCustomScreenSize";
 
 const Navbar = () => {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setmounted] = useState(false);
-
+  const sizes = useMediaQuery(768);
   const route = useRouter();
 
   return (
@@ -27,23 +28,27 @@ const Navbar = () => {
               height={40}
             />
           </Link>
-          <ul
-            className={`list-none hidden md:flex  items-center space-x-10 `}
-          >
-            <Link href={"/"}>Home</Link>
-            <li>About us</li>
-            <li>Attorneys</li>
-            <Link href={"/blog/sections"}>Blog</Link>
-            <Link href={"/contact"}>Contact</Link>
-          </ul>
-    
-        <button className=" font-semibold btn bg-[#ebd234] md:btn-md hover:bg-yellow-400 px-8 ">
-            Consultation
-          </button>
-       
+          <div className="">
+          {sizes ? (
+            <MobileNav />
+          ) : (
+            <div className="w-full flex items-center space-x-10">
+              <ul className={`list-none flex  items-center space-x-10 `}>
+                <Link href={"/"}>Home</Link>
+                <li>About us</li>
+                <li>Attorneys</li>
+                <Link href={"/blog/sections"}>Blog</Link>
+                <Link href={"/contact"}>Contact</Link>
+              </ul>
+
+              <button className=" font-semibold btn bg-[#ebd234] btn-md hover:bg-yellow-400 px-8 ">
+                Consult
+              </button>
+            </div >
+          )}
+          </div>
         </div>
       </nav>
-     
     </>
   );
 };

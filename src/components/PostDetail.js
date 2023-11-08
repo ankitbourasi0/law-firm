@@ -43,7 +43,7 @@ const PostDetail = ({ post }) => {
 
 
   return (
-    <div className="text-neutral-800 bg-yellow-200  lg:p-8 pb-12 mb-8 rounded-md">
+    <div className="text-neutral-800 bg-white/40 max-w-5xl lg:p-8 pb-12 mb-8 rounded-md">
       <div className="relative overflow-hidden shadow mb-6 ">
         <Image
           width={1080}

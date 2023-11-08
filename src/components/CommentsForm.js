@@ -60,8 +60,8 @@ useEffect(() => {
   };
 
   return (
-    <div className="bg-orange-300  shadow-lg rounded-lg  p-8  pb-12  mb-8">
-      <h1 className=" text-xl   dark:text-zinc-700 mb-8 font-semibold border-b pb-4">
+    <div className="bg-white/40  shadow-lg rounded-lg  p-8  pb-12  mb-8">
+      <h1 className=" text-xl   dark:text-zinc-700 mb-8 font-semibold border-b border-neutral-700 pb-4">
         Leave a Reply
       </h1>
       <div className="grid grid-cols-1 gap-4 mb-4">

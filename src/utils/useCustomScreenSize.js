@@ -1,3 +1,4 @@
+"use client"
 import { useCallback, useEffect, useState } from 'react'
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(false);

@@ -12,8 +12,8 @@ export async function getStaticProps() {
 
 const BlogSection = ({ posts }) => {
   return (
-    <div classNameName="bg-yellow-100">
-      <div className="py-12">
+    <div classNameName=" ">
+      <div className="py-12 bg-gradient-to-tr from-indigo-200 via-red-200 to-yellow-100">
         <div className="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
           <div className="mb-12 space-y-2 text-center">
             <h2 className="text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">
@@ -25,7 +25,7 @@ const BlogSection = ({ posts }) => {
               valuable insights into the legal world.
             </p>
           </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 md:px-16">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 md:px-16 px-6 ">
             {posts && posts.map((post,index) => <BlogSectionCard post={post} key={index} />)}
           </div>
         </div>

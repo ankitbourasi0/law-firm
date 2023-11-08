@@ -1,22 +1,18 @@
-import Head from "next/head";
+
 import Image from "next/image";
 import { motion as m } from "framer-motion";
-import { AiOutlineArrowRight } from "react-icons/ai";
-import { useCallback, useEffect, useState } from "react";
-import { Poppins } from "next/font/google";
-import Navbar from "@/components/Navbar";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-
-import Solutions from "@/components/HasselFreeSolution";
 import useMediaQuery from "@/utils/useCustomScreenSize";
 import MobileFooter from "@/components/Footer";
 import Counter from "@/utils/Counter";
 import PostCard from "@/components/PostCard";
 import { getAllPost } from "./api";
-import Carousel from "react-multi-carousel";
+import {BiDownArrowAlt} from "react-icons/bi"
 import "react-multi-carousel/lib/styles.css";
-import BlogSectionCard from "./blog/sections/BlogSectionCard";
 import AuthorProfile from "@/components/AuthorProfile";
+import ScrollToTopButton from "@/components/bottomToTop";
+import { useScroll } from "framer-motion";
 export async function getStaticProps() {
   const result = (await getAllPost()) || [];
 
@@ -25,6 +21,8 @@ export async function getStaticProps() {
   };
 }
 const Home = ({ result }) => {
+  const scroll = useScroll();
+
   const [dataLoaded, setDataLoaded] = useState(false);
   const [postData, setPostData] = useState(false);
   const attorneys = [
@@ -50,9 +48,26 @@ const Home = ({ result }) => {
     },
   ];
 
+
+
   const Profiles = attorneys.map((e, index) => {
     return <AuthorProfile key={index} attorneys={e} />;
   });
+
+  const ExternalLink = ({
+    href,
+    children,
+  }) => {
+    return (
+      <a
+        href={href}
+        target={"_blank"}
+        className="text-zinc-900 hover:text-zinc-600 transition"
+      >
+        {children}
+      </a>
+    );
+  };
 
   useEffect(() => {
     setPostData(result);
@@ -116,57 +131,16 @@ const Home = ({ result }) => {
     </div>
   );
 
+  const scrolll = () => {
+    ("use client");
+    let pageHeight = window.innerHeight;
+
+    window.scrollTo({ top: pageHeight, behavior: "smooth" });
+  };
   return (
-    <div className="w-full bg-[#1E1E1E]">
-      {/* <div className="w-full  font-poppins h-full min-h-[80vh]  ">
-        <div className="w-full    h-full   ">
-          <div className={"w-full md:max-w-6xl  mx-auto  h-full  "}>
-            <div className="grid grid-cols-2  w-full max-h-[80vh] ">
+    <div className="w-full bg-[#1E1E1E] ">
+      <ScrollToTopButton />
 
-              <div className=" flex h-full  max-w-screen-sm  flex-col justify-center ">
-
-                <h1 className="md:text-5xl text-3xl mb-12  ">
-                  हिरवा एसोसिएट्स .
-                  <br />{" "}
-                  <span className="">
-                    The Art of{" "}
-                    <span
-                      className="cursor-pointer"
-                      onMouseEnter={() => setonHover(true)}
-                      onMouseLeave={() => setonHover(false)}
-                    >
-                      Law.
-                    </span>
-                  </span>
-                </h1>
-              
-                <div className=" md:text-2xl text-xl max-w-sm font-medium ">
-                  <h1 className=" mb-4 ">
-                    Our team of lawyers work to ensure that the law serves our
-                    clients in these areas:
-                  </h1>
-
-                  <button className="text-neutral-500 hover:text-neutral-800 font-normal mb-3 flex items-center  ">
-                    <p>Criminal Law </p>
-                  </button>
-
-                  <button className="text-neutral-500 hover:text-neutral-800 font-normal mb-3 flex items-center  ">
-                    <p>Civil Law </p>
-                  </button>
-                </div>
-              </div>
-
-              <div className="relative ml-auto ">
-                <Image src={"/images/Shape.png"} width={420} height={420} />
-                <div className="absolute -top-14">
-                  <Image src={"/images/image.png"} width={440} height={480} />
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div> */}
       <div className="md:min-h-[90vh] w-full py-16 px-8">
         <div className="max-w-7xl w-full mx-auto md:flex grid grid-flow-row gap-6 justify-between">
           <div>
@@ -208,8 +182,8 @@ const Home = ({ result }) => {
                 alt="hammerIcon"
                 src="/images/icons/hammerlaw.png"
                 className="md:w-16 w-12"
-                width={64}
-                height={52}
+                width={96}
+                height={96}
               />
 
               <h1>Legal</h1>
@@ -236,7 +210,8 @@ const Home = ({ result }) => {
               matters. With a team of seasoned attorneys, we offer comprehensive
               legal services to clients accross India and beyond.
             </p>
-            <m.button
+         <div className="w-full ml-auto ">
+         <m.button
               initial={{
                 opacity: 0,
               }}
@@ -247,10 +222,12 @@ const Home = ({ result }) => {
                 duration: 0.8,
                 delay: 0.5,
               }}
-              className="btn bg-[#ebd234] btn-lg btn-wide hover:bg-yellow-400 md:px-12  font-semibold  md:text-xl  uppercase  shadow-gray-200"
+              onClick={scrolll}
+              className=" motion-safe:animate-bounce rounded-full p-4 bg-[#ebd234]   hover:bg-yellow-400     shadow-gray-200"
             >
-              Consult Now
+            <BiDownArrowAlt size={26} />
             </m.button>
+         </div>
           </div>
           <div className=" flex justify-center items-center ">
             <Image
@@ -640,17 +617,22 @@ const Home = ({ result }) => {
         {/* //Blog Post  */}
 
         <div className="w-full bg-yellow-50 md:py-16 pt-12 pb-16 md:px-10 text-neutral-800 ">
-          <div className=" md:mb-16 mb-6 ">
-            <h1 className="md:text-5xl  md:mb-8 mb-3  font-semibold text-center text-3xl  md:capitalize uppercase ">
-              Blogs
+          <div className=" md:mb-16 mb-6  flex flex-col items-center">
+            <h1 className="md:text-xl md:px-6 md:py-2 px-3 py-1 text-xs bg-orange-500 rounded-full text-yellow-100  md:mb-4 mb-2  font-semibold text-center   md:capitalize uppercase ">
+              OUR BLOG
             </h1>
-            <p className=" text-center lg:mx-auto lg:w-6/12 text-gray-700 text-lg dark:text-gray-300">
+            <div className="md:text-7xl text-3xl  font-semibold">
+      
+              <span className="">News </span>
+              <span className=""><i> & Articles</i></span>
+            </div>
+            {/* <p className=" text-center lg:mx-auto lg:w-6/12 text-gray-700 text-lg dark:text-gray-300">
               Insights, updates, and expert perspectives: Explore our blog for
               the latest in law. Stay informed, get practical advice, and gain
               valuable insights into the legal world.
-            </p>
+            </p> */}
           </div>
-          <div className="  md:px-16 px-8 grid md:grid-cols-3 md:gap-y-0 gap-y-4 gap-x-10 ">
+          <div className="  md:px-24 px-8 max-w-6xl mx-auto  ">
             {postData.posts &&
               postData.posts.slice(-3).map((post) => (
                 <PostCard post={post} key={post.id} />
@@ -665,21 +647,18 @@ const Home = ({ result }) => {
           </div>
         </div>
 
-        <div className="w-full min-h-[430px] md:relative px-6">
-          {/* <img
-            src="/images/grid.jpg"
-            className="w-full object-cover overflow-hidden md:block hidden max-h-[420px] "
-          /> */}
-          <div className="w-full md:absolute md:mt-0 mt-20 top-32 ">
+        <div className="w-full bg-[conic-gradient(var(--tw-gradient-stops))] from-indigo-200 via-red-200 to-yellow-100 min-h-[430px] px-6 py-28">
+       
+          <div className="w-full  ">
             <div className="grid md:grid-cols-2 w-full mx-auto max-w-7xl">
               <div>
-                <h2 className="text-2xl md:text-5xl text-yellow-100  font-semibold">
+                <h2 className="text-2xl md:text-5xl   font-semibold">
                   Are You in Trouble with any
                   <br />
                   Cases? Contact us!
                 </h2>
                 <br />
-                <p className="text-gray-300">
+                <p className="">
                   Welcome to hirwa associates, your trusted partner in legal
                   matters. With a team of
                   <br />
@@ -783,8 +762,28 @@ const Home = ({ result }) => {
             </div>
 
             <div>
-              <h2 className="font-semibold text-2xl">Social Media</h2>
-              <br />
+              <h2 className="font-semibold text-2xl">Social Links</h2>
+              <div className="flex flex-col justify-center my-4">
+     
+
+      {/* website links */}
+      <div className="flex flex-col space-y-4">
+       
+
+        {/* youtube */}
+        <ExternalLink href="https://www.youtube.com/channel/UCZHC5DaOrrDRoWLrITREpMA">
+          Youtube
+        </ExternalLink>
+        {/* medium */}
+        <ExternalLink href="https://medium.com/@nextdevelopment1111">
+          Medium
+        </ExternalLink>
+        {/* twitter */}
+        <ExternalLink href="https://twitter.com/NextDev1111">
+          Twitter
+        </ExternalLink>
+      </div>
+    </div>
             </div>
           </div>
           {/* bottom  */}
