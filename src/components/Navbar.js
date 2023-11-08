@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={` container bg-yellow-50 md:px-0 px-3   w-full font-poppins text-neutral-700 font-semibold flex  items-center  `}
+        className={`  bg-yellow-50 md:px-0 px-3   w-full font-poppins text-neutral-700 font-semibold flex  items-center  `}
       >
         <div className="max-w-7xl mx-auto w-full flex items-center justify-between py-6">
           <Link href={"/"} className="flex items-center w-28 ">

@@ -22,7 +22,7 @@ const BlogSectionCard = (post) => {
     <div>
 
 <article className="overflow-hidden rounded-lg shadow transition hover:shadow-lg ">
-  <img
+  <Image
        src={post.post?.coverImage?.url}
              alt="art cover"
              loading="lazy"

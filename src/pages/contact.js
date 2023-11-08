@@ -4,7 +4,7 @@ import { ImLocation } from "react-icons/im";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { GrMail } from "react-icons/gr";
 import { PiPaperPlaneRightFill } from "react-icons/pi";
-const contact = () => {
+const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [phone, setPhone] = useState("")
@@ -109,4 +109,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;
