@@ -22,7 +22,6 @@ function ScrollToTopButton() {
   const { scrollYProgress } = useScroll();
   const controls = useAnimationControls();
 
-  // const isBrowser = () => typeof window !== "undefined"; //The approach recommended by Next.js
 
   function scrollToTop() {
    

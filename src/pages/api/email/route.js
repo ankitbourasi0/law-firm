@@ -1,6 +1,6 @@
-import { NextResponse,NextRequest} from "next/server"
+
 import nodemailer from "nodemailer"
-import Mail from "nodemailer/lib/mailer"
+
 
 export  default async function POST(request,res) {
   const { email, message } =  request.body

@@ -48,8 +48,8 @@ const PostDetail = ({ post }) => {
         <Image
           width={1080}
           height={480}
-          src={post.coverImage.url}
-          alt={post.title}
+          src={post?.coverImage?.url}
+          alt={post?.title}
           className="object-top max-h-[420px] object-cover w-full rounded-t-lg"
         />
       </div>
