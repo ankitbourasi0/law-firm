@@ -1,38 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Law Firm Website⚖️
+### It is a simple minimal ui website for a law firm, with some smooth animation, click to scroll button, server side and statically side rendering. also has cool blog section where owner can publish 
+* Blog Post
+* Authors
+* Categories,
+* and More   
 
-## Getting Started
+## Tech stack
+### Next.Js
+### GraphQL
+### Hygraph CMS
+### Framer
+### Tailwind Css
 
-First, run the development server:
+## Screenshots
+### ![image](https://github.com/ankitbourasi0/law-firm/assets/34002165/f95f6bae-105b-46e9-a6af-2bb3a6995b65) 
+### ![image](https://github.com/ankitbourasi0/law-firm/assets/34002165/a0cc63af-1a0f-4da4-b86c-39dff2010038)
+### ![image](https://github.com/ankitbourasi0/law-firm/assets/34002165/92e4e2f7-f21a-4288-bff3-47cafe20e5bd)
+### ![image](https://github.com/ankitbourasi0/law-firm/assets/34002165/bcfad2cb-c28f-4413-860c-2667c4fee926)
+### ![image](https://github.com/ankitbourasi0/law-firm/assets/34002165/b9bbda35-3650-4b69-b189-4961f7af4aa9)
+### ![image](https://github.com/ankitbourasi0/law-firm/assets/34002165/5381a44a-17eb-421c-abbe-41c53034b4a4)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ 
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
