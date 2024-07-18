@@ -545,7 +545,8 @@ const Home = ({ result }) => {
           <div className="hidden md:block  w-full max-w-4xl relative">
             <Image
               src="/images/97.jpg "
-              alt="imageYellowBackground"
+              alt=""
+              unoptimized
               className="w-[650px] h-[580px]"
               width={650}
               height={580}
@@ -584,7 +585,7 @@ const Home = ({ result }) => {
               </li>
             </ul>
             <button className="uppercase md:text-lg text-white bg-black px-16 py-3 md:rounded-none rounded-lg md:px-12 md:py-3 md:ml-6 mt-6 font-semibold ">
-              Consult{" "}
+            <Link href="/contact">Consult</Link>
             </button>
           </div>
           <div className="md:hidden block  w-full  ">
@@ -671,7 +672,7 @@ const Home = ({ result }) => {
 
               <div className="w-full flex justify-center items-center mt-6">
                 <button className="bg-[#ebd234] text-black font-bold md:text-xl md:px-14 md:py-4 px-16 py-3 md:w-fit w-full rounded-lg md:rounded-none ">
-                  Consult Now
+                <Link href="/contact">Consult Now</Link>
                 </button>
               </div>
             </div>
@@ -716,7 +717,7 @@ const Home = ({ result }) => {
                   <Link href="/">Blog</Link>
                 </li>
                 <li>
-                  <Link href="/">Contact</Link>
+                  <Link href="/contact">Contact</Link>
                 </li>
               </ul>
             </div>
