@@ -279,7 +279,7 @@ const Home = ({ result }) => {
         </div> */}
 
         {/* About us  */}
-        <div className="w-full  bg-yellow-50 text-black min-h-[80vh] px-8 py-10">
+        <div id="about" className="w-full  bg-yellow-50 text-black min-h-[80vh] px-8 py-10">
           <div className="w-full  max-w-7xl min-h-[80vh] mx-auto grid items-center md:grid-cols-2">
             <div className="min-h-full py-16">
               <h2 className=" text-2xl md:text-left text-center ">
@@ -323,7 +323,7 @@ const Home = ({ result }) => {
         {/* <Solutions/> */}
         {/* Area of Practice  */}
 
-        <div className="w-full min-h-[100vh] my-16 px-4">
+        <div id="practice-areas" className="w-full min-h-[100vh] my-16 px-4">
           <p className="md:text-[52px] text-3xl text-yellow-100 md:mb-6 mb-10 font-semibold text-center ">
             Our Practice Area
           </p>
@@ -585,7 +585,7 @@ const Home = ({ result }) => {
               </li>
             </ul>
             <button className="uppercase md:text-lg text-white bg-black px-16 py-3 md:rounded-none rounded-lg md:px-12 md:py-3 md:ml-6 mt-6 font-semibold ">
-            <Link href="/contact">Consult</Link>
+            <Link href="/contact">Consult </Link>
             </button>
           </div>
           <div className="md:hidden block  w-full  ">
@@ -594,7 +594,7 @@ const Home = ({ result }) => {
         </div>
 
         {/* Meet with your lawyers */}
-        <div className="min-h-[100vh] md:relative mb-10">
+        <div id="attorneys" className="min-h-[100vh] md:relative mb-10">
           <div className="py-20 text-white">
             <div className="xl:container mx-auto px-6 md:px-12">
               <div className="mb-16 md:w-2/3 lg:w-1/2">
@@ -617,7 +617,7 @@ const Home = ({ result }) => {
 
         {/* //Blog Post  */}
 
-        <div className="w-full bg-yellow-50 md:py-16 pt-12 pb-16 md:px-10 text-neutral-800 ">
+        <div id="blog" className="w-full bg-yellow-50 md:py-16 pt-12 pb-16 md:px-10 text-neutral-800 ">
           <div className=" md:mb-16 mb-6  flex flex-col items-center">
             <h1 className="md:text-xl md:px-6 md:py-2 px-3 py-1 text-xs bg-orange-500 rounded-full text-yellow-100  md:mb-4 mb-2  font-semibold text-center   md:capitalize uppercase ">
               OUR BLOG
