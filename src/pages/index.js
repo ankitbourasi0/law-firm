@@ -25,34 +25,34 @@ const Home = ({ result }) => {
 
   const [dataLoaded, setDataLoaded] = useState(false);
   const [postData, setPostData] = useState(false);
-  const attorneys = [
-    {
-      name: "Sachin Hirwa",
-      photo: "/images/attorneys/dummy1.jpg",
-      profile: "Head Lawyer & Founder Hirwa Associates",
-    },
-    {
-      name: "Shraddha Kapoor",
-      photo: "/images/attorneys/profilecard1.png",
-      profile: "Junior Lawyer",
-    },
-    {
-      name: "Ankit Bourasi",
-      photo: "/images/attorneys/dummy1.jpg",
-      profile: "Intern",
-    },
-    {
-      name: "Aryan Danal",
-      photo: "/images/attorneys/dummy1.jpg",
-      profile: "Intern",
-    },
-  ];
+  // const attorneys = [
+  //   {
+  //     name: "Sachin Hirwa",
+  //     photo: "/images/attorneys/dummy1.jpg",
+  //     profile: "Head Lawyer & Founder Hirwa Associates",
+  //   },
+  //   {
+  //     name: "Shraddha Kapoor",
+  //     photo: "/images/attorneys/profilecard1.png",
+  //     profile: "Junior Lawyer",
+  //   },
+  //   {
+  //     name: "Ankit Bourasi",
+  //     photo: "/images/attorneys/dummy1.jpg",
+  //     profile: "Intern",
+  //   },
+  //   {
+  //     name: "Aryan Danal",
+  //     photo: "/images/attorneys/dummy1.jpg",
+  //     profile: "Intern",
+  //   },
+  // ];
 
 
 
-  const Profiles = attorneys.map((e, index) => {
-    return <AuthorProfile key={index} attorneys={e} />;
-  });
+  // const Profiles = attorneys.map((e, index) => {
+  //   return <AuthorProfile key={index} attorneys={e} />;
+  // });
 
   const ExternalLink = ({
     href,
@@ -594,7 +594,7 @@ const Home = ({ result }) => {
         </div>
 
         {/* Meet with your lawyers */}
-        <div id="attorneys" className="min-h-[100vh] md:relative mb-10">
+        {/* <div id="attorneys" className="min-h-[100vh] md:relative mb-10">
           <div className="py-20 text-white">
             <div className="xl:container mx-auto px-6 md:px-12">
               <div className="mb-16 md:w-2/3 lg:w-1/2">
@@ -614,6 +614,7 @@ const Home = ({ result }) => {
             </div>
           </div>
         </div>
+         */}
 
         {/* //Blog Post  */}
 
@@ -633,7 +634,7 @@ const Home = ({ result }) => {
               valuable insights into the legal world.
             </p> */}
           </div>
-          <div className="  md:px-24 px-8 max-w-6xl mx-auto  ">
+       {/*   <div className="  md:px-24 px-8 max-w-6xl mx-auto  ">
             {postData.posts &&
               postData.posts.slice(-3).map((post) => (
                 <PostCard post={post} key={post.id} />
@@ -646,6 +647,13 @@ const Home = ({ result }) => {
               <button className="btn btn-neutral">Read more</button>
             </Link>
           </div>
+           */}
+          
+          <div className="mb-24">
+           <div className="md:max-w-5xl mx-auto max-w-[280px] rounded-lg text-center underline text-3xl  border py-6 bg-yellow-100">
+          Blogs Are under Maintainance
+          </div>
+           </div>
         </div>
 
         <div className="w-full bg-[conic-gradient(var(--tw-gradient-stops))] from-indigo-200 via-red-200 to-yellow-100 min-h-[430px] px-6 py-28">
@@ -761,31 +769,32 @@ const Home = ({ result }) => {
                 Near Court No. 10, In Front of Photo Copy{" "}
               </p>
             </div>
-
+    {/*
             <div>
               <h2 className="font-semibold text-2xl">Social Links</h2>
               <div className="flex flex-col justify-center my-4">
      
 
-      {/* website links */}
-      <div className="flex flex-col space-y-4">
+
+  <div className="flex flex-col space-y-4">
        
 
-        {/* youtube */}
+      
         <ExternalLink href="https://www.youtube.com/channel/UCZHC5DaOrrDRoWLrITREpMA">
           Youtube
         </ExternalLink>
-        {/* medium */}
+      
         <ExternalLink href="https://medium.com/@nextdevelopment1111">
           Medium
         </ExternalLink>
-        {/* twitter */}
+ 
         <ExternalLink href="https://twitter.com/NextDev1111">
           Twitter
         </ExternalLink>
       </div>
+     
     </div>
-            </div>
+            </div>  */}
           </div>
           {/* bottom  */}
 
